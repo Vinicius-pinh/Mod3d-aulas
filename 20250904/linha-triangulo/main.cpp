@@ -32,6 +32,13 @@ static void display(void)
     glVertex2f(-2.0f, 0.0f);
     glVertex2f(2.0f, 0.0f);
     glEnd();
+    glBegin(GL_TRIANGLES);
+    glColor3f(0, 1, 0);
+    glVertex2f(-2.0f, -2.0f);
+    glVertex2f(2.0f, -2.0f);
+    glColor3f(1, 0, 0);
+    glVertex2f(0.0f, 2.0f);
+    glEnd();
     glFlush();
 }
 
