@@ -39,6 +39,7 @@ static void display(void)
 
     gluOrtho2D(-3, 3, -3, 3);
     glScalef(escala, escala, 0);
+    glRotatef(45.0f, 0.0f, 0.0f, 1.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     glLineWidth(10);
