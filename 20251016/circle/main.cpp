@@ -6,7 +6,7 @@
 GLfloat escala = 1;
 int i = 0;
 
-void circulo (float dx, dy){
+void circulo (float dx, float dy){
 float ang, x, y;
     glBegin(GL_LINE_LOOP);
     for (i = 0; i < 360; i++)
@@ -32,10 +32,10 @@ void desenha(void)
     glLoadIdentity();
     glColor3f(1, 0, 0);
     glLineWidth(6);
-    glFlush();
     circulo(-2, 2);
     circulo(0, 0);
     circulo(4,-3);
+    glFlush();
 }
 
 void listeningKey (unsigned char tecla,

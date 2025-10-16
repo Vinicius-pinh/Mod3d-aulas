@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1760656748 source:c:\users\1588925\documents\github\mod3d-aulas\20251016\circle\main.cpp
+	<GL/glut.h>
+	<stdio.h>
+	<math.h>
+
+1760655072 c:\users\1588925\documents\github\mod3d-aulas\freeglut\include\gl\glut.h
+	"freeglut_std.h"
+
+1760655072 c:\users\1588925\documents\github\mod3d-aulas\freeglut\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
