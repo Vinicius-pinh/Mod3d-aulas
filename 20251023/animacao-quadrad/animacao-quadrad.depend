@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1761261005 source:c:\users\1588925\documents\github\mod3d-aulas\20251023\animacao-quadrad\main.cpp
+1761263210 source:c:\users\1588925\documents\github\mod3d-aulas\20251023\animacao-quadrad\main.cpp
 	<windows.h>
 	<GL/freeglut.h>
 	<stdio.h>

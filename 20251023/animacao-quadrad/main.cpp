@@ -12,7 +12,44 @@ GLfloat ystep = 3.0f;
 
 GLfloat windowWidth;
 GLfloat windowHeight;
-GLint clicks=0;
+GLint cliques=0;
+char msg[10];
+
+int x,y;
+bool check=true;
+
+void verificaAreaClique()
+{
+    int x2, x3, x4, y2, y3, y4;
+    x2 = x1;
+    y2 = y1+rsize;
+    x3 = x1+rsize;
+    y3 = y1;
+    x4 = x1+rsize;
+    y4 = y1+rsize;
+
+
+}
+void mouse(int button, int state, int mousex, int mousey)
+{
+    if(button==GLUT_LEFT_BUTTON)
+    //if(button==GLUT_LEFT_BUTTON && state==GLUT_DOWN)
+    {
+        check=true;
+        x = mousex;
+        y = windowHeight-mousey;
+
+   }
+   else if(button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)//undo(clear)the drawing
+   {
+        glClearColor(1, 1, 1, 0);
+        glClear(GL_COLOR_BUFFER_BIT);
+        check = false;
+   }
+   verificaAreaClique();
+    glutPostRedisplay();
+}
+
 void DesenhaTextoStroke(char *aux)
 {
 	while(*aux)
@@ -34,13 +71,16 @@ void Desenha(void)
                glVertex2i(x1+rsize,y1+rsize);
      glEnd();
 
-     DesenhaTextoStroke("teste");
-     //glPushMatrix();
+     glPushMatrix();
+
      glTranslatef(0.0f, 200.0f, 0.0f);
-     DesenhaTextoStroke("Cliques: 0");
-     //glPopMatrix();
+     sprintf(msg, "Cliques:%d", cliques++);
+     DesenhaTextoStroke(msg);
+     glPopMatrix();
 
      glutSwapBuffers();
+
+     printf("mouse x: %d, y:%d\n", x, y);
 }
 
 
@@ -90,6 +130,7 @@ int main(int argc, char** argv)
      glutCreateWindow("Animacao");
      glutDisplayFunc(Desenha);
      glutReshapeFunc(AlteraTamanhoJanela);
+     glutMouseFunc(mouse);
      glutTimerFunc(5, Timer, 0);
      glutMainLoop();
 }
